@@ -41,6 +41,7 @@ export const FormBlock: Block = {
       label: 'Intro Content',
     },
   ],
+
   graphQL: {
     singularName: 'FormBlock',
   },

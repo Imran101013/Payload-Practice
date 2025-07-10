@@ -21,6 +21,8 @@ import { OurProccess } from './OurProccessBlock/Component'
 import { OurPackages } from './OurPackagesBlock/Component'
 import { OurFaqs } from './OurFaqsBlock/Component'
 import { GetStarted } from './GetStartedBlock/Component'
+import { ContactInfoBlock } from './ContactInfoBlock/Component'
+import { OurLocations } from './OurLocationsBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -42,6 +44,8 @@ const blockComponents = {
   ourPackagesBlock: OurPackages,
   ourFaqsBlock: OurFaqs,
   getStartedBlock: GetStarted,
+  contactInfoBlock: ContactInfoBlock,
+  ourLocationsBlock:OurLocations,
 }
 
 export const RenderBlocks: React.FC<{

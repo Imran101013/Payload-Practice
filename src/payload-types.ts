@@ -221,6 +221,8 @@ export interface Page {
     | OurPackagesBlock
     | OurFaqsBlock
     | GetStartedBlock
+    | ContactInfoBlock
+    | OurLocationsBlock
   )[];
   meta?: {
     title?: string | null;
@@ -1021,6 +1023,42 @@ export interface GetStartedBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ContactInfoBlock".
+ */
+export interface ContactInfoBlock {
+  address?: string | null;
+  phone?: string | null;
+  email?: string | null;
+  businessHours?: string | null;
+  form?: (string | null) | Form;
+  responseTitle?: string | null;
+  responseContent?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'contactInfoBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "OurLocationsBlock".
+ */
+export interface OurLocationsBlock {
+  title?: string | null;
+  description?: string | null;
+  locations?:
+    | {
+        locationTitle?: string | null;
+        address?: string | null;
+        phoneNumber?: string | null;
+        email?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'ourLocationsBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1335,6 +1373,8 @@ export interface PagesSelect<T extends boolean = true> {
         ourPackagesBlock?: T | OurPackagesBlockSelect<T>;
         ourFaqsBlock?: T | OurFaqsBlockSelect<T>;
         getStartedBlock?: T | GetStartedBlockSelect<T>;
+        contactInfoBlock?: T | ContactInfoBlockSelect<T>;
+        ourLocationsBlock?: T | OurLocationsBlockSelect<T>;
       };
   meta?:
     | T
@@ -1667,6 +1707,40 @@ export interface GetStartedBlockSelect<T extends boolean = true> {
   title?: T;
   description?: T;
   buttonText?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "ContactInfoBlock_select".
+ */
+export interface ContactInfoBlockSelect<T extends boolean = true> {
+  address?: T;
+  phone?: T;
+  email?: T;
+  businessHours?: T;
+  form?: T;
+  responseTitle?: T;
+  responseContent?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "OurLocationsBlock_select".
+ */
+export interface OurLocationsBlockSelect<T extends boolean = true> {
+  title?: T;
+  description?: T;
+  locations?:
+    | T
+    | {
+        locationTitle?: T;
+        address?: T;
+        phoneNumber?: T;
+        email?: T;
+        id?: T;
+      };
   id?: T;
   blockName?: T;
 }

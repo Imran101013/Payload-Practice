@@ -34,6 +34,8 @@ import { OurProccessBlock } from '@/blocks/OurProccessBlock/config'
 import { OurPackagesBlock } from '@/blocks/OurPackagesBlock/config'
 import { OurFaqsBlock } from '@/blocks/OurFaqsBlock/config'
 import { GetStartedBlock } from '@/blocks/GetStartedBlock/config'
+import { ContactInfoBlock } from '@/blocks/ContactInfoBlock/config'
+import { OurLocations } from '@/blocks/OurLocationsBlock/config'
 
 export const Pages: CollectionConfig<'pages'> = {
   slug: 'pages',
@@ -109,6 +111,8 @@ export const Pages: CollectionConfig<'pages'> = {
                 OurPackagesBlock,
                 OurFaqsBlock,
                 GetStartedBlock,
+                ContactInfoBlock,
+                OurLocations,
               ],
               required: true,
               admin: {
