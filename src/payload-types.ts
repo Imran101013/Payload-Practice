@@ -223,6 +223,7 @@ export interface Page {
     | GetStartedBlock
     | ContactInfoBlock
     | OurLocationsBlock
+    | FindUsBlock
   )[];
   meta?: {
     title?: string | null;
@@ -1059,6 +1060,18 @@ export interface OurLocationsBlock {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FindUsBlock".
+ */
+export interface FindUsBlock {
+  heading?: string | null;
+  description?: string | null;
+  map?: string | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'findUsBlock';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -1375,6 +1388,7 @@ export interface PagesSelect<T extends boolean = true> {
         getStartedBlock?: T | GetStartedBlockSelect<T>;
         contactInfoBlock?: T | ContactInfoBlockSelect<T>;
         ourLocationsBlock?: T | OurLocationsBlockSelect<T>;
+        findUsBlock?: T | FindUsBlockSelect<T>;
       };
   meta?:
     | T
@@ -1741,6 +1755,17 @@ export interface OurLocationsBlockSelect<T extends boolean = true> {
         email?: T;
         id?: T;
       };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "FindUsBlock_select".
+ */
+export interface FindUsBlockSelect<T extends boolean = true> {
+  heading?: T;
+  description?: T;
+  map?: T;
   id?: T;
   blockName?: T;
 }

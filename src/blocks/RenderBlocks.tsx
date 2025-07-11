@@ -23,6 +23,7 @@ import { OurFaqs } from './OurFaqsBlock/Component'
 import { GetStarted } from './GetStartedBlock/Component'
 import { ContactInfoBlock } from './ContactInfoBlock/Component'
 import { OurLocations } from './OurLocationsBlock/Component'
+import { FindUsBlock } from './FindUsBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -46,6 +47,7 @@ const blockComponents = {
   getStartedBlock: GetStarted,
   contactInfoBlock: ContactInfoBlock,
   ourLocationsBlock:OurLocations,
+  findUsBlock: FindUsBlock,
 }
 
 export const RenderBlocks: React.FC<{
